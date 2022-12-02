@@ -5,5 +5,5 @@ from .models import PostModel
 
 class HomePageView(ListView):
     model = PostModel
-    template_name = 'home.html'
+    template_name = 'posts.html'
     context_object_name = 'all_posts_list'

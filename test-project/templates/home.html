@@ -1,10 +1,6 @@
 <!-- templates/home.html -->
+{% extends 'base.html' %}
 
-<h1>Message board homepage</h1>
-<ul>
-    {% for post in all_posts_list %}
-    <li>
-        {{ post.text }}
-    </li>
-    {% endfor %}
-</ul>
+{% block content %}
+<h1>Hello, my dudes!</h1>
+{% endblock %}
