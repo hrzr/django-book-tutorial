@@ -18,6 +18,10 @@ Awesome blog posts
                     </p>
                 </div>
             </li>
+        {% empty %}
+            <li>
+                No posts here, unfortunately.
+            </li>
         {% endfor %}
     </ul>
 {% endblock %}
