@@ -120,6 +120,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = '/home/mgaivoronskii/django-book-tutorial/test-project/staticfiles/'
+STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
