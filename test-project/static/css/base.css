@@ -53,3 +53,13 @@ header h1 a{
 .base-href a:hover {
     color: mediumblue;
 }
+
+.base-href footer a {
+    margin: 0;
+    color: blue;
+    text-decoration: none
+}
+
+.base-href footer a:hover {
+    color: mediumblue;
+}

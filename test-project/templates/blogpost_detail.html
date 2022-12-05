@@ -1,0 +1,20 @@
+<!-- templates/blogpost_detail.html -->
+{% extends 'base.html' %}
+
+{% block title %}
+{{ post.title }}
+{% endblock %}
+
+{% block content %}
+    <div class="post-entry">
+        <h2>
+            {{ post.title }}
+        </h2>
+        <p>
+            {{ post.body }}
+        </p>
+    </div>
+    <footer class="base-href">
+        <a href="{% url 'blogs' %}">Back</a>
+    </footer>
+{% endblock %}
