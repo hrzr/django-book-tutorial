@@ -1,0 +1,23 @@
+<!-- templates/blog_index.html -->
+{% extends 'base.html' %}
+
+{% block title %}
+Awesome blog posts
+{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for post in object_list %}
+            <li>
+                <div class="post-entry">
+                    <h2>
+                        <a href="">{{ post.title }}</a>
+                    </h2>
+                    <p>
+                        {{ post.body }}
+                    </p>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,9 +1,21 @@
 <!-- templates/base.html -->
-<header>
+{% load static %}
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+<header class="base-href">
     <a href="{% url 'home' %}">Home</a>
     <a href="{% url 'about' %}">About</a>
     <a href="{% url 'index' %}">Posts</a>
+    <a href="{% url 'blogs' %}">Blogs</a>
 </header>
-
-{% block content %}
-{% endblock %}
+<div>
+    {% block content %}
+    {% endblock %}
+</div>
+</body>
+</html>
