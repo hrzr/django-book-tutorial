@@ -23,7 +23,12 @@ class BlogDetailView(DetailView):
 class BlogCreateView(CreateView):
     model = PostModel
     template_name = 'post_new.html'
-    fields = ['title', 'author', 'body']
+    fields = ['title', 'body']
+
+    def form_valid(self, form):
+        user = self.request.user
+        form.instance.author = user
+        return super().form_valid(form)
 
 
 class BlogUpdateView(UpdateView):
