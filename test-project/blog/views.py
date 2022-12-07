@@ -26,8 +26,7 @@ class BlogCreateView(CreateView):
     fields = ['title', 'body']
 
     def form_valid(self, form):
-        user = self.request.user
-        form.instance.author = user
+        form.instance.author = self.request.user
         return super().form_valid(form)
 
 
