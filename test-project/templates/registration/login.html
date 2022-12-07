@@ -1,0 +1,23 @@
+<!-- templates/registration/login.html -->
+{% extends 'base.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <p>You are logged in!</p>
+    {% else %}
+        <h2>
+            Log in
+        </h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">
+                Log in
+            </button>
+        </form>
+    {% endif %}
+{% endblock %}
