@@ -7,7 +7,7 @@ Login
 
 {% block content %}
     {% if user.is_authenticated %}
-        <p>You are logged in!</p>
+        <p>Hi, {{ user.username }}!</p>
     {% else %}
         <h2>
             Log in
@@ -19,5 +19,8 @@ Login
                 Log in
             </button>
         </form>
+        <p>
+            <a href="{% url 'signup' %}">Sign Up</a>
+        </p>
     {% endif %}
 {% endblock %}
