@@ -17,11 +17,25 @@
             {{ object.body }}
         </p>
     </div>
-
-    <p>
-        <a href="{% url 'article_edit' article.pk %}">Edit</a> |
-        <a href="{% url 'article_delete' article.pk %}">Delete</a>
-    </p>
+    {% if article.author == user %}
+        <p>
+            <a href="{% url 'article_edit' article.pk %}">Edit</a> |
+            <a href="{% url 'article_delete' article.pk %}">Delete</a>
+        </p>
+    {% endif %}
+    <div class="card-footer">
+        <p>
+            Comment section
+        </p>
+        {% for comment in article.comments.all %}
+            <p>
+                <span class="font-weight-bold">
+                    {{ comment.author }} &middot;
+                </span>
+                {{ comment }}
+            </p>
+        {% endfor %}
+    </div>
     <p>
         Back to <a href="{% url 'article_list' %}">All articles</a>
     </p>
